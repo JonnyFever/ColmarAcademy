@@ -63,6 +63,15 @@ h1, p {
   display: block;
 }
 
+h1, h2, h3 {
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+}
+
+p {
+  font-family: "Muli", sans-serif;
+}
+
 /* Nav Bar */
 
 .menu-container {
@@ -115,7 +124,7 @@ h1, p {
   font-weight: 600;
 }
 
-.campus,
+.links .campus,
 .online,
 .companies,
 .login {
@@ -187,7 +196,7 @@ h1, p {
 }
 
 .main.content {
-  border: 1px solid blue;  /* For debugging */
+  /*border: 1px solid blue;  /* For debugging */
   width: 60%;
 }
 
@@ -209,13 +218,11 @@ h1, p {
 }
 
 .narrative-heading {
-  font-family: "Montserrat", serif;
   font-size: 2.2rem;
   font-weight: 700;
 }
 
 .narrative-content {
-  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   width: 90%;
   padding-top: 1.5rem;
@@ -231,29 +238,47 @@ h1, p {
 /* Side Column */
 .side.content {
   width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  border-left: .3px solid rgb(156, 156, 156);
 }
 
-.side.content img {
+.information-column.orientation {
+  border-bottom: .3px solid rgb(156, 156, 156);
+}
+
+.information-column {
+  display: flex;
+}
+
+.information-column img {
   width: 35%;
-  height: auto;
-  margin: 1rem;
+  height: 35%;
+  padding: 1rem;
 }
 
-.orientation,
-.campus,
-.guest {
-  border: 1px solid blue;  /* For debugging */
-  display: flex;
+.information-column.orientation {
+  padding-top: 1rem;
 }
 
-.orientation .content,
-.campus .content,
-.guest .content {
-  border: 1px solid blue;  /* For debugging */
+.information-column h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.information-column p {
+  padding: .8rem 0;
+}
+
+.side.content .info {
+  width: 65%;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.read-link {
+  font-family: "Muli", sans-serif;
+  font-weight: 600;
+  color: rgb(43, 141, 204);
 }
