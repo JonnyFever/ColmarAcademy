@@ -68,8 +68,13 @@ h1, h2, h3 {
   font-weight: 500;
 }
 
-p {
+p, span {
   font-family: "Muli", sans-serif;
+}
+
+.header-container,
+.information-column.lecture {
+  background-color: rgb(190, 190, 190);
 }
 
 /* Nav Bar */
@@ -134,7 +139,6 @@ p {
 /* Header */
 
 .header-container {
-  background-color: rgb(190, 190, 190);
   display: flex;
   justify-content: center;
 }
@@ -193,6 +197,7 @@ p {
 .information-container {
   display: flex;
   width: 100%;
+  background-color: rgb(242, 240, 240);
 }
 
 .main.content {
@@ -238,15 +243,12 @@ p {
 /* Side Column */
 .side.content {
   width: 40%;
-  border-left: .3px solid rgb(156, 156, 156);
-}
-
-.information-column.orientation {
-  border-bottom: .3px solid rgb(156, 156, 156);
+  border-left: .3px solid rgb(190, 190, 190);
 }
 
 .information-column {
   display: flex;
+  margin-bottom: 1.5px;
 }
 
 .information-column img {
@@ -255,17 +257,14 @@ p {
   padding: 1rem;
 }
 
-.information-column.orientation {
-  padding-top: 1rem;
-}
-
 .information-column h3 {
   font-size: 1.3rem;
   font-weight: 600;
 }
 
 .information-column p {
-  padding: .8rem 0;
+  padding: .5rem 0;
+  width: 75%;
 }
 
 .side.content .info {
@@ -281,4 +280,57 @@ p {
   font-family: "Muli", sans-serif;
   font-weight: 600;
   color: rgb(43, 141, 204);
+}
+
+.information-column.orientation {
+  border-bottom: .3px solid rgb(190, 190, 190);
+  padding-top: 1rem;
+}
+
+.information-column.campus,
+.information-column.lecture {
+  border-top: .3px solid rgb(190, 190, 190);
+  border-bottom: .3px solid rgb(190, 190, 190);
+}
+
+.information-column.campus {
+  padding-bottom: 5px;
+}
+
+.information-column.lecture p {
+  line-height: 1.3rem;
+}
+
+/* Courses */
+
+.course-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(222, 220, 220);
+}
+
+.course-container h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  padding: 2rem 0;
+}
+
+.course-grid-item {
+  border: 1px solid blue;  /* For debugging */
+  width: 300px;
+  background-color: white;
+  margin: 2rem;
+}
+
+.image-container img {
+  width: 300px;
+  height: auto;
+}
+
+.course-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 4.5rem;
 }
