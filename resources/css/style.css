@@ -65,7 +65,11 @@ h1, p {
 
 h1, h2, h3 {
   font-family: "Montserrat", serif;
-  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 p, span {
@@ -73,8 +77,50 @@ p, span {
 }
 
 .header-container,
-.information-column.lecture {
+.information-column.lecture,
+.information-column.fisma {
   background-color: rgb(190, 190, 190);
+}
+
+.menu-container,
+.header-container,
+.information-container,
+.course-container,
+.thesis-container,
+.footer-container {
+  display: flex;
+}
+
+.heading {
+  font-family: "Montserrat", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.side-content {
+  width: 40%;
+}
+
+.information-column {
+  display: flex;
+}
+
+.info {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.learn-start.heading,
+.thesis-container.heading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
 /* Nav Bar */
@@ -82,7 +128,6 @@ p, span {
 .menu-container {
   background-color: rgb(255, 255, 255);
   padding: 20px 0;
-  display: flex;
   justify-content: center;
   height: 4rem;
 }
@@ -139,7 +184,6 @@ p, span {
 /* Header */
 
 .header-container {
-  display: flex;
   justify-content: center;
 }
 
@@ -183,7 +227,7 @@ p, span {
   margin-top: 1rem;
 }
 
-.header .info {
+.header-info {
   /*border: 1px solid blue;  /* For debugging */
   margin-right: 12rem;
   display: flex;
@@ -195,7 +239,6 @@ p, span {
 /* Information */
 
 .information-container {
-  display: flex;
   width: 100%;
   background-color: rgb(242, 240, 240);
 }
@@ -216,15 +259,10 @@ p, span {
   margin: 2rem 1.5rem;
 }
 
-.narrative-heading,
+.narrative.heading,
 .narrative-content,
 .strategist {
   padding-left: 1.5rem;
-}
-
-.narrative-heading {
-  font-size: 2.2rem;
-  font-weight: 700;
 }
 
 .narrative-content {
@@ -241,13 +279,14 @@ p, span {
 }
 
 /* Side Column */
-.side.content {
-  width: 40%;
+
+.information-container .side-content {
   border-left: .3px solid rgb(190, 190, 190);
 }
 
-.information-column {
-  display: flex;
+.information-column.orientation,
+.information-column.campus,
+.information-column.lecture {
   margin-bottom: 1.5px;
 }
 
@@ -257,23 +296,9 @@ p, span {
   padding: 1rem;
 }
 
-.information-column h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
 .information-column p {
   padding: .5rem 0;
   width: 75%;
-}
-
-.side.content .info {
-  width: 65%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
 }
 
 .read-link {
@@ -304,25 +329,10 @@ p, span {
 /* Courses */
 
 .course-container {
-  display: flex;
   justify-content: center;
   flex-direction: column;
   width: 100%;
   background-color: rgb(222, 220, 220);
-}
-
-.course-container h1 {
-  /*border: 1px solid blue;  /* For debugging */
-  font-size: 2.2rem;
-  font-weight: 700;
-}
-
-.course-container .learn-start {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
 }
 
 .course-grid {
@@ -350,12 +360,59 @@ p, span {
   margin: 1rem 1rem 1.5rem 1rem;
 }
 
-.course-grid .content h3 {
-  font-size: 1.3rem;
-}
-
 .course-grid .content .course {
   font-family: "Muli", sans-serif;
   text-transform: uppercase;
   padding: .5rem 0;
+}
+
+/* Thesis Exhibit */
+
+.thesis-container {
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(242, 240, 240);
+}
+
+.thesis-container .heading h1 {
+  /*border: 1px solid blue;  /* For debugging */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.thesis-content {
+  display: flex;
+}
+
+.video-column {
+  /*border: 1px solid blue;  /* For debugging */
+  width: 60%;
+}
+
+video {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.video-column h3 {
+  padding-left: 1.5rem;
+}
+
+.video-column p {
+  padding: .5rem 1.5rem 2rem 1.5rem;
+}
+
+.thesis-content .information-column {
+  /*border: 1px solid blue;  /* For debugging */
+  display: flex;
+}
+
+/* Footer */
+
+.footer .links {
+  display: flex;
+  justify-content: flex-end;
 }
