@@ -306,31 +306,56 @@ p, span {
 .course-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   background-color: rgb(222, 220, 220);
 }
 
 .course-container h1 {
+  /*border: 1px solid blue;  /* For debugging */
   font-size: 2.2rem;
   font-weight: 700;
-  padding: 2rem 0;
 }
 
-.course-grid-item {
-  border: 1px solid blue;  /* For debugging */
-  width: 300px;
-  background-color: white;
-  margin: 2rem;
-}
-
-.image-container img {
-  width: 300px;
-  height: auto;
+.course-container .learn-start {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
 .course-grid {
+  /*border: 1px solid blue;  /* For debugging */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 2rem 4.5rem;
+  align-content: flex-end;
+  margin: 0 3.5rem 1rem 3.5rem;
+}
+
+.course-grid-item {
+  /*border: 1px solid blue;  /* For debugging */
+  width: 375px;
+  background-color: white;
+  margin: 1rem;
+}
+
+.image-container img {
+  width: 375px;
+  height: auto;
+}
+
+.course-grid .content {
+  margin: 1rem 1rem 1.5rem 1rem;
+}
+
+.course-grid .content h3 {
+  font-size: 1.3rem;
+}
+
+.course-grid .content .course {
+  font-family: "Muli", sans-serif;
+  text-transform: uppercase;
+  padding: .5rem 0;
 }
