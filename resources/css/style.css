@@ -174,7 +174,7 @@ p, span {
   font-weight: 600;
 }
 
-.links .campus,
+.menu-container .links .campus,
 .online,
 .companies,
 .login {
@@ -412,7 +412,39 @@ video {
 
 /* Footer */
 
+.footer-container {
+  *border: 1px solid blue;  /* For debugging */
+  background-color: rgb(242, 240, 240);
+  border-top: .3px solid rgb(190, 190, 190);
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  *border: 1px solid blue;  /* For debugging */
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer,
 .footer .links {
+  font-family: "Muli", sans-serif;
+  font-size: .8rem;
+}
+
+.footer .links {
+  *border: 1px solid blue;  /* For debugging */
   display: flex;
   justify-content: flex-end;
+}
+
+.copyright {
+  padding-left: 1.5rem;
+}
+
+.links .terms {
+  padding-right: 1rem;
 }
