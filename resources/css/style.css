@@ -123,6 +123,10 @@ p, span {
   padding-bottom: 1rem;
 }
 
+.links a:hover {
+  color: rgb(100, 100, 100);
+}
+
 /* Nav Bar */
 
 .menu-container {
@@ -225,6 +229,16 @@ p, span {
   padding-top: .5rem;
   padding-bottom: .5rem;
   margin-top: 1rem;
+  box-shadow: 2px 2px #888888;
+}
+
+.button:hover {
+  font-weight: 500;
+  background-color: rgb(100, 100, 100);
+}
+
+.button:active {
+  box-shadow: 1px 1px #888888;
 }
 
 .header-info {
@@ -326,6 +340,22 @@ p, span {
   line-height: 1.3rem;
 }
 
+.information-column:hover {
+  background-color: white;
+}
+
+.information-column.lecture:hover {
+  background-color: rgb(222, 220, 220);
+}
+
+.read-link:hover {
+  font-size: 1.1rem;
+}
+
+.read-link:active {
+  font-size: 1rem;
+}
+
 /* Courses */
 
 .course-container {
@@ -410,10 +440,19 @@ video {
   display: flex;
 }
 
+.information-column.fisma:hover {
+  background-color: rgb(222, 220, 220);
+}
+
+.information-column.fisma:hover,
+.information-column.new-york:hover {
+  font-size: 1.1rem;
+}
+
 /* Footer */
 
 .footer-container {
-  *border: 1px solid blue;  /* For debugging */
+  /*border: 1px solid blue;  /* For debugging */
   background-color: rgb(242, 240, 240);
   border-top: .3px solid rgb(190, 190, 190);
   display: flex;
@@ -421,7 +460,7 @@ video {
 }
 
 .footer {
-  *border: 1px solid blue;  /* For debugging */
+  /*border: 1px solid blue;  /* For debugging */
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 4rem;
