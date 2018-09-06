@@ -48,15 +48,12 @@
 
 /* Universal Styles */
 
-html {
+html,
+body {
   font-size: 16px;
-  color: rgb(70, 70, 70);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  /*color: rgb(70, 70, 70);*/
+  max-width: 1400px;
+  margin: auto;
 }
 
 h1, p {
@@ -65,6 +62,7 @@ h1, p {
 
 h1, h2, h3 {
   font-family: "Montserrat", serif;
+  color: rgb(50, 50, 50);
 }
 
 h3 {
@@ -74,16 +72,17 @@ h3 {
 
 p, span {
   font-family: "Muli", sans-serif;
+  color: rgb(70, 70, 70);
 }
 
-.header-container,
-.information-column.lecture,
+.banner-container,
+.information-content-desktop .information-column.lecture,
 .information-column.fisma {
   background-color: rgb(190, 190, 190);
 }
 
 .menu-container,
-.header-container,
+.banner-container,
 .information-container,
 .course-container,
 .thesis-container,
@@ -124,7 +123,8 @@ p, span {
 }
 
 .links a:hover {
-  color: rgb(100, 100, 100);
+  /*color: rgb(100, 100, 100);*/
+  color: rgb(43, 141, 204);
 }
 
 /* Nav Bar */
@@ -137,20 +137,38 @@ p, span {
 }
 
 .menu {
-  /*border: 1px solid #fff;  /* For debugging */
+  border: 1px solid #blue;  /* For debugging */
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.links {
-  /*border: 1px solid #fff;  /* For debugging */
+.desktop {
+  border: 1px solid #blue;  /* For debugging */
   display: flex;
   justify-content: flex-end;
-  padding-right: 1.5rem;
   font-family: "Muli", sans-serif;
   font-size: 1.2rem;
+}
+
+.desktop.links {
+  padding-right: 1.5rem;
+}
+
+.desktop ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.desktop li {
+  padding-right: 1rem;
+}
+
+.desktop li:active {
+  position: relative;
+  top: 1.5px;
 }
 
 .menu-container .logo {
@@ -178,105 +196,158 @@ p, span {
   font-weight: 600;
 }
 
-.menu-container .links .campus,
+.menu-container .desktop .campus,
 .online,
 .companies,
 .login {
   margin-left: 1rem;
 }
 
-/* Header */
-
-.header-container {
-  justify-content: center;
+.desktop.links a {
+  transition-property: color;
+  transition-duration: 250ms;
 }
 
-.header {
-  /*border: 1px solid #fff;  /* For debugging */
-  width: 100%;
+header .mobile {
+  display: none;
+}
+
+header .mobile img {
+  transition-property: width;
+  transition-duration: 250ms;
+}
+
+header .mobile img:hover {
+  width: 2.1rem;
+}
+
+header .mobile img:active {
+  position: relative;
+  top: 1px;
+}
+
+
+@media only screen and (max-width: 480px) {
+  header .menu {
+    display: none;
+  }
+  header .mobile {
+    display: flex;
+    width: 100%;
+    height: 4rem;
+  }
+  header .mobile ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+/* Banner */
+
+.banner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-.header img {
-  /*border: 1px solid #fff;  /* For debugging */
-  max-width: 60%;
-  height: auto;
+.banner img {
+  /*border: 1px solid blue;  /* For debugging */
+  width: 60%;
   padding: 2rem 1.5rem;
 }
 
-.header h1 {
+.banner-info {
+  /*border: 1px solid blue;  /* For debugging */
+  width: 30%;
+}
+
+.banner h1 {
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.3;
 }
 
-.header .content {
+.banner-info .content {
   font-size: 1.3rem;
   font-weight: 500;
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
+  padding: 1.2rem 0;
   line-height: 1.4;
 }
 
-.header .button {
+.start-btn {
+  padding-top: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.start-btn a {
   font-family: "Muli", sans-serif;
   font-size: 1.2rem;
-  text-align: center;
-  color: rgb(255, 255, 255);
+  padding: 0.5rem 9.8rem;
+  border-radius: 3px;
   background-color: rgb(70, 70, 70);
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  margin-top: 1rem;
-  box-shadow: 2px 2px #888888;
+  color: GhostWhite;
+  transition-property: background-color;
+  transition-duration: 250ms;
 }
 
-.button:hover {
-  font-weight: 500;
-  background-color: rgb(100, 100, 100);
+.start-btn a:hover {
+  background-color: rgb(43, 141, 204);
 }
 
-.button:active {
-  box-shadow: 1px 1px #888888;
+.start-btn a:active {
+  position: relative;
+  top: 1px;
 }
 
-.header-info {
-  /*border: 1px solid blue;  /* For debugging */
-  margin-right: 12rem;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  font-family: "Montserrat", serif;
+@media only screen and (max-width: 480px), (orientation: portrait) {
+  .banner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .banner img {
+    width: 100%;
+    padding: 0 0;
+  }
+  .banner-info {
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+  .banner-info .content {
+    padding-top: 1.5rem;
+  }
+  .start-btn {
+    padding-top: 1.5rem;
+  }
+  .start-btn a {
+    padding: 0.5rem 8.2rem;
+    background-color: rgb(110, 110, 110);
+  }
 }
 
 /* Information */
 
 .information-container {
-  width: 100%;
   background-color: rgb(242, 240, 240);
 }
 
-.main.content {
-  /*border: 1px solid blue;  /* For debugging */
-  width: 60%;
+.information-content-desktop {
+  display: flex;
 }
 
-.main.content img {
-  width: 100%;
+.main-content {
+  /*border: 1px solid blue;  /* For debugging */
+  max-width: 60%;
   padding: 2rem 1.5rem;
 }
 
-.image-content {
-  min-width: 60%;
-  min-height: auto;
-  margin: 2rem 1.5rem;
+.main-content img {
+  width: 100%;
 }
 
-.narrative.heading,
-.narrative-content,
-.strategist {
-  padding-left: 1.5rem;
+.narrative h1 {
+  padding-top: 2rem;
 }
 
 .narrative-content {
@@ -288,23 +359,17 @@ p, span {
 .strategist {
   font-family: "Muli", sans-serif;
   font-size: .9rem;
-  padding-top: 1.8rem;
-  padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 /* Side Column */
 
-.information-container .side-content {
-  border-left: .3px solid rgb(190, 190, 190);
+.side-content {
+  /*border: 1px solid blue;  /* For debugging */
+  width: 40%;
 }
 
-.information-column.orientation,
-.information-column.campus,
-.information-column.lecture {
-  margin-bottom: 1.5px;
-}
-
-.information-column img {
+.information-content-desktop .information-column img {
   width: 35%;
   height: 35%;
   padding: 1rem;
@@ -321,18 +386,28 @@ p, span {
   color: rgb(43, 141, 204);
 }
 
-.information-column.orientation {
+.information-container .side-content {
+  border-left: .3px solid rgb(190, 190, 190);
+}
+
+.information-content-desktop .information-column.orientation,
+.information-content-desktop .information-column.campus,
+.information-content-desktop .information-column.lecture {
+  margin-bottom: 1.5px;
+}
+
+.information-content-desktop .information-column.orientation {
   border-bottom: .3px solid rgb(190, 190, 190);
   padding-top: 1rem;
 }
 
-.information-column.campus,
-.information-column.lecture {
+.information-content-desktop .information-column.campus,
+.information-content-desktop .information-column.lecture {
   border-top: .3px solid rgb(190, 190, 190);
   border-bottom: .3px solid rgb(190, 190, 190);
 }
 
-.information-column.campus {
+.information-content-desktop .information-column.campus {
   padding-bottom: 5px;
 }
 
@@ -340,20 +415,71 @@ p, span {
   line-height: 1.3rem;
 }
 
-.information-column:hover {
+.information-content-desktop .information-column {
+  transition-property: background-color;
+  transition-duration: 250ms;
+}
+
+.information-content-desktop .information-column:hover {
   background-color: white;
 }
 
-.information-column.lecture:hover {
-  background-color: rgb(222, 220, 220);
-}
-
 .read-link:hover {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .read-link:active {
-  font-size: 1rem;
+  position: relative;
+  font-size: 0.97rem;
+}
+
+.information-content-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 480px), (orientation: portrait) {
+  .information-content-desktop {
+    display: none;
+  }
+  .information-content-mobile {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .information-column {
+    /*border: 1px solid blue;  /* For debugging */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  .information-column .info {
+    /*border: 1px solid blue;  /* For debugging */
+    width: 100%;
+  }
+  .information-column.orientation,
+  .information-column.campus {
+    padding-bottom: 3rem;
+  }
+
+  .information-column h3,
+  .information-column p,
+  .information-column span {
+    padding-left: 1rem;
+  }
+  .information-column h3 {
+    padding-top: 1rem;
+  }
+  .information-content-mobile .information-column img {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+  .information-column.lecture {
+    padding-bottom: 2rem;
+  }
 }
 
 /* Courses */
@@ -365,7 +491,7 @@ p, span {
   background-color: rgb(222, 220, 220);
 }
 
-.course-grid {
+.course-grid-desktop {
   /*border: 1px solid blue;  /* For debugging */
   display: flex;
   justify-content: center;
@@ -386,14 +512,78 @@ p, span {
   height: auto;
 }
 
-.course-grid .content {
+.course-grid-desktop .content {
   margin: 1rem 1rem 1.5rem 1rem;
 }
 
-.course-grid .content .course {
+.course-grid-desktop .content .course {
   font-family: "Muli", sans-serif;
   text-transform: uppercase;
   padding: .5rem 0;
+}
+
+.course-grid-item a {
+  transition-property: font-size;
+  transition-duration: 350ms;
+}
+
+.course-grid-item a:hover {
+  font-size: 1.05rem;
+}
+
+.course-grid-item .course {
+  transition-property: color;
+  transition-duration: 250ms;
+}
+
+.course-grid-item .course:hover {
+  color: rgb(43, 141, 204);
+}
+
+.course-grid-item:hover {
+  background-color: rgb(242, 240, 240);
+}
+
+.course-grid-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 480px), (orientation: portrait) {
+  .course-grid-desktop {
+    display: none;
+  }
+  .course-container {
+    background-color: rgb(245, 245, 245);
+    border-top: .3px solid rgb(190, 190, 190);
+    border-bottom: .3px solid rgb(190, 190, 190);
+  }
+  .course-grid-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+  .box {
+    background-color: rgb(222, 220, 220);
+    margin: 0 1rem 0.5rem 1rem;
+    transition-property: background-color;
+    transition-duration: 250ms;
+  }
+  .box:hover {
+    background-color: rgb(235, 235, 235);
+  }
+  .box h3 {
+    padding: 1rem 1rem 1.5rem 1rem;
+    transition-property: color;
+    transition-duration: 250ms;
+  }
+  .box h3:hover {
+    color: rgb(43, 141, 204);
+  }
+  .box h3:active {
+    position: relative;
+    top: 2px;
+  }
 }
 
 /* Thesis Exhibit */
@@ -401,7 +591,7 @@ p, span {
 .thesis-container {
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  /*width: 100%;*/
   background-color: rgb(242, 240, 240);
 }
 
@@ -420,19 +610,25 @@ p, span {
 
 .video-column {
   /*border: 1px solid blue;  /* For debugging */
-  width: 60%;
+  max-width: 60%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 video {
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  /*padding: 0 1.5rem 1.5rem 1.5rem;*/
+  width: 100%;
 }
 
-.video-column h3 {
-  padding-left: 1.5rem;
+.narrative .urban-heading {
+  padding-top: 1.5rem;
 }
 
-.video-column p {
-  padding: .5rem 1.5rem 2rem 1.5rem;
+.narrative .urban-content {
+  line-height: 1.5;
+  width: 90%;
+  padding-top: .5rem;
 }
 
 .thesis-content .information-column {
@@ -440,13 +636,43 @@ video {
   display: flex;
 }
 
-.information-column.fisma:hover {
+.thesis-content .information-column img {
+  width: 35%;
+  height: 35%;
+  padding: 1rem;
+}
+
+.thesis-content .information-column {
+  transition-property: background-color;
+  transition-duration: 250ms;
+}
+
+.thesis-content .information-column:hover {
   background-color: rgb(222, 220, 220);
 }
 
-.information-column.fisma:hover,
-.information-column.new-york:hover {
-  font-size: 1.1rem;
+.thesis-content .side-content p:hover {
+  transition-property: color;
+  transition-property: font-size;
+  transition-duration: 250ms;
+}
+
+.thesis-content .side-content p:hover {
+  color: rgb(43, 141, 204);
+  font-size: 1.05rem;
+}
+
+@media only screen and (max-width: 480px), (orientation: portrait) {
+  .thesis-content .side-content {
+    display: none;
+  }
+  .video-column .narrative {
+    display: none;
+  }
+  .video-column {
+    padding: 0;
+    min-width: 100%;
+  }
 }
 
 /* Footer */
@@ -475,7 +701,7 @@ video {
 }
 
 .footer .links {
-  *border: 1px solid blue;  /* For debugging */
+  /*border: 1px solid blue;  /* For debugging */
   display: flex;
   justify-content: flex-end;
 }
@@ -484,6 +710,24 @@ video {
   padding-left: 1.5rem;
 }
 
-.links .terms {
+.footer .links, .terms {
   padding-right: 1rem;
+}
+
+.footer .terms:active,
+.footer .privacy:active {
+  position: relative;
+  top: 1.5px;
+}
+
+@media only screen and (max-width: 480px), (orientation: portrait) {
+  .footer-container .links {
+    display: none;
+  }
+  .footer {
+    padding: 1.5rem 0 0 0;
+  }
+  .copyright {
+    padding: 1rem;
+  }
 }
